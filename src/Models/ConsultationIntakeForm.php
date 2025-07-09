@@ -27,29 +27,33 @@ class ConsultationIntakeForm extends Model
         ConsultationIntakeFormMutators;
         
     protected $fillable = [
-        //FILLABLE//
+        'questions',
+        'consultation_session_id',
     ];
 
     protected $creatable = [
-        //CREATABLE//
+        'questions',
+        'consultation_session_id',
     ];
 
     protected $updatable = [
-        //UPDATABLE//
+        'questions',
     ];
 
     protected $casts = [
-        //CASTS//
+        'questions' => 'array',
     ];
 
     protected $protected_metas = [];
 
-    protected $editable_metas = [
-        //EDITABLEMETAS//
-    ];
+    protected $editable_metas = [];
 
     public static $export_cols = [
-        //EXPORTCOLS//
+        'id',
+        'questions',
+        'consultation_session_id',
+        'created_at',
+        'updated_at',
     ];
 
     public static $loadable_relations = [

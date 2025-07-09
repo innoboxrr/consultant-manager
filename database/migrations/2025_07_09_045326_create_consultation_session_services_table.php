@@ -15,7 +15,10 @@ return new class extends Migration
     {
         Schema::create('consultation_session_services', function (Blueprint $table) {
             $table->id();
-            //EDIT//
+            $table->string('status'); // Ej: pending_payment
+            $table->json('responses')->nullable(); // Intake form responses
+            $table->foreignId('consultation_service_id')->constrained()->onDelete('cascade');
+            $table->foreignId('consultation_session_id')->constrained()->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

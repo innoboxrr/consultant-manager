@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('consultation_intake_forms', function (Blueprint $table) {
             $table->id();
-            //EDIT//
+            $table->json('questions')->nullable();
+            $table->foreignId('consultation_session_id')->constrained()->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

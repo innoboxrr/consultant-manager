@@ -27,29 +27,31 @@ class ConsultationPostAttachment extends Model
         ConsultationPostAttachmentMutators;
         
     protected $fillable = [
-        //FILLABLE//
+        'path',
+        'consultation_post_id',
     ];
 
     protected $creatable = [
-        //CREATABLE//
+        'path',
+        'consultation_post_id',
     ];
 
     protected $updatable = [
-        //UPDATABLE//
+        'path',
     ];
 
-    protected $casts = [
-        //CASTS//
-    ];
+    protected $casts = [];
 
     protected $protected_metas = [];
 
-    protected $editable_metas = [
-        //EDITABLEMETAS//
-    ];
+    protected $editable_metas = [];
 
     public static $export_cols = [
-        //EXPORTCOLS//
+        'id',
+        'path',
+        'consultation_post_id',
+        'created_at',
+        'updated_at',
     ];
 
     public static $loadable_relations = [

@@ -27,15 +27,20 @@ class Consultee extends Model
         ConsulteeMutators;
         
     protected $fillable = [
-        //FILLABLE//
+        'status',
+        'consultant_id',
+        'user_id',
     ];
 
     protected $creatable = [
-        //CREATABLE//
+        'status',
+        'consultant_id',
+        'user_id',
     ];
 
     protected $updatable = [
-        //UPDATABLE//
+        'status',
+        'consultant_id',
     ];
 
     protected $casts = [
@@ -49,7 +54,12 @@ class Consultee extends Model
     ];
 
     public static $export_cols = [
-        //EXPORTCOLS//
+        'id',
+        'status',
+        'consultant_id',
+        'user_id',
+        'created_at',
+        'updated_at',
     ];
 
     public static $loadable_relations = [

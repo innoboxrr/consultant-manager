@@ -15,7 +15,10 @@ return new class extends Migration
     {
         Schema::create('consultation_prices', function (Blueprint $table) {
             $table->id();
-            //EDIT//
+            $table->string('type'); // fixed, per_minute, per_message, per_file, per_advice
+            $table->decimal('amount', 10, 2);
+            $table->json('payload')->nullable();
+            $table->foreignId('consulting_service_id')->constrained('consultation_services')->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

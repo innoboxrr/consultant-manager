@@ -27,29 +27,47 @@ class ConsultationPost extends Model
         ConsultationPostMutators;
         
     protected $fillable = [
-        //FILLABLE//
+        'subject',
+        'content',
+        'payload',
+        'parent_id',
+        'owner_type',
+        'owner_id',
     ];
 
     protected $creatable = [
-        //CREATABLE//
+        'subject',
+        'content',
+        'payload',
+        'parent_id',
+        'owner_type',
+        'owner_id',
     ];
 
     protected $updatable = [
-        //UPDATABLE//
+        'subject',
+        'content',
+        'payload',
     ];
 
     protected $casts = [
-        //CASTS//
+        'payload' => 'array',
     ];
 
     protected $protected_metas = [];
 
-    protected $editable_metas = [
-        //EDITABLEMETAS//
-    ];
+    protected $editable_metas = [];
 
     public static $export_cols = [
-        //EXPORTCOLS//
+        'id',
+        'subject',
+        'content',
+        'payload',
+        'parent_id',
+        'owner_type',
+        'owner_id',
+        'created_at',
+        'updated_at',
     ];
 
     public static $loadable_relations = [

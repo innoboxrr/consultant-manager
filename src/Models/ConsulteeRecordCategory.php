@@ -27,29 +27,35 @@ class ConsulteeRecordCategory extends Model
         ConsulteeRecordCategoryMutators;
         
     protected $fillable = [
-        //FILLABLE//
+        'name',
+        'parent_id',
+        'consultee_record_id',
     ];
 
     protected $creatable = [
-        //CREATABLE//
+        'name',
+        'parent_id',
+        'consultee_record_id',
     ];
 
     protected $updatable = [
-        //UPDATABLE//
+        'name',
+        'parent_id',
     ];
 
-    protected $casts = [
-        //CASTS//
-    ];
+    protected $casts = [];
 
     protected $protected_metas = [];
 
-    protected $editable_metas = [
-        //EDITABLEMETAS//
-    ];
+    protected $editable_metas = [];
 
     public static $export_cols = [
-        //EXPORTCOLS//
+        'id',
+        'name',
+        'parent_id',
+        'consultee_record_id',
+        'created_at',
+        'updated_at',
     ];
 
     public static $loadable_relations = [

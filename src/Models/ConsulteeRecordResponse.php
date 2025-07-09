@@ -27,29 +27,42 @@ class ConsulteeRecordResponse extends Model
         ConsulteeRecordResponseMutators;
         
     protected $fillable = [
-        //FILLABLE//
+        'data',
+        'responded_at',
+        'updated_by_id',
+        'consultee_record_item_id',
     ];
 
     protected $creatable = [
-        //CREATABLE//
+        'data',
+        'responded_at',
+        'updated_by_id',
+        'consultee_record_item_id',
     ];
 
     protected $updatable = [
-        //UPDATABLE//
+        'data',
+        'responded_at',
+        'updated_by_id',
     ];
 
     protected $casts = [
-        //CASTS//
+        'data' => 'array',
+        'responded_at' => 'datetime',
     ];
 
     protected $protected_metas = [];
 
-    protected $editable_metas = [
-        //EDITABLEMETAS//
-    ];
+    protected $editable_metas = [];
 
     public static $export_cols = [
-        //EXPORTCOLS//
+        'id',
+        'data',
+        'responded_at',
+        'updated_by_id',
+        'consultee_record_item_id',
+        'created_at',
+        'updated_at',
     ];
 
     public static $loadable_relations = [

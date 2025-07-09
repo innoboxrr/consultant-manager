@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('consultant_record_templates', function (Blueprint $table) {
             $table->id();
-            //EDIT//
+            $table->json('data')->nullable();
+            $table->foreignId('consultant_id')->constrained()->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

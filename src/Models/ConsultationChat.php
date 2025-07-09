@@ -27,29 +27,28 @@ class ConsultationChat extends Model
         ConsultationChatMutators;
         
     protected $fillable = [
-        //FILLABLE//
+        'consultation_session_id',
     ];
 
     protected $creatable = [
-        //CREATABLE//
+        'consultation_session_id',
     ];
 
     protected $updatable = [
-        //UPDATABLE//
+        'consultation_session_id',
     ];
 
-    protected $casts = [
-        //CASTS//
-    ];
+    protected $casts = [];
 
     protected $protected_metas = [];
 
-    protected $editable_metas = [
-        //EDITABLEMETAS//
-    ];
+    protected $editable_metas = [];
 
     public static $export_cols = [
-        //EXPORTCOLS//
+        'id',
+        'consultation_session_id',
+        'created_at',
+        'updated_at',
     ];
 
     public static $loadable_relations = [

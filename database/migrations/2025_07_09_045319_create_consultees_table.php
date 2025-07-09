@@ -15,7 +15,9 @@ return new class extends Migration
     {
         Schema::create('consultees', function (Blueprint $table) {
             $table->id();
-            //EDIT//
+            $table->string('status');
+            $table->foreignId('consultant_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

@@ -15,9 +15,16 @@ return new class extends Migration
     {
         Schema::create('consultation_posts', function (Blueprint $table) {
             $table->id();
-            //EDIT//
+            $table->string('subject')->nullable();
+            $table->text('content')->nullable();
+            $table->json('payload')->nullable();
+            $table->foreignId('parent_id')->nullable()->constrained('consultation_posts')->onDelete('set null');
+            $table->string('owner_type'); // Consultant | Consultee
+            $table->unsignedBigInteger('owner_id');
             $table->timestamps();
             $table->softDeletes();
+
+            $table->index(['owner_type', 'owner_id']);
         });
     }
 

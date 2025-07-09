@@ -27,29 +27,37 @@ class ConsulteeRecord extends Model
         ConsulteeRecordMutators;
         
     protected $fillable = [
-        //FILLABLE//
+        'status',
+        'payload',
+        'consultee_id',
     ];
 
     protected $creatable = [
-        //CREATABLE//
+        'status',
+        'payload',
+        'consultee_id',
     ];
 
     protected $updatable = [
-        //UPDATABLE//
+        'status',
+        'payload',
     ];
 
     protected $casts = [
-        //CASTS//
+        'payload' => 'array',
     ];
 
     protected $protected_metas = [];
 
-    protected $editable_metas = [
-        //EDITABLEMETAS//
-    ];
+    protected $editable_metas = [];
 
     public static $export_cols = [
-        //EXPORTCOLS//
+        'id',
+        'status',
+        'payload',
+        'consultee_id',
+        'created_at',
+        'updated_at',
     ];
 
     public static $loadable_relations = [

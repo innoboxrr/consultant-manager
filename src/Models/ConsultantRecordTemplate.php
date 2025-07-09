@@ -27,29 +27,33 @@ class ConsultantRecordTemplate extends Model
         ConsultantRecordTemplateMutators;
         
     protected $fillable = [
-        //FILLABLE//
+        'data',
+        'consultant_id',
     ];
 
     protected $creatable = [
-        //CREATABLE//
+        'data',
+        'consultant_id',
     ];
 
     protected $updatable = [
-        //UPDATABLE//
+        'data',
     ];
 
     protected $casts = [
-        //CASTS//
+        'data' => 'array',
     ];
 
     protected $protected_metas = [];
 
-    protected $editable_metas = [
-        //EDITABLEMETAS//
-    ];
+    protected $editable_metas = [];
 
     public static $export_cols = [
-        //EXPORTCOLS//
+        'id',
+        'data',
+        'consultant_id',
+        'created_at',
+        'updated_at',
     ];
 
     public static $loadable_relations = [

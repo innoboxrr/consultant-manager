@@ -15,7 +15,11 @@ return new class extends Migration
     {
         Schema::create('consultee_record_items', function (Blueprint $table) {
             $table->id();
-            //EDIT//
+            $table->string('type');
+            $table->string('label');
+            $table->json('data')->nullable();
+            $table->boolean('required')->default(false);
+            $table->foreignId('consultee_record_category_id')->constrained()->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

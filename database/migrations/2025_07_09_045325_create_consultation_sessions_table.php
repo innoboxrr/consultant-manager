@@ -15,7 +15,11 @@ return new class extends Migration
     {
         Schema::create('consultation_sessions', function (Blueprint $table) {
             $table->id();
-            //EDIT//
+            $table->string('status'); // open, close
+            $table->dateTime('start_at')->nullable();
+            $table->dateTime('end_at')->nullable();
+            $table->json('payload')->nullable();
+            $table->foreignId('consultee_id')->constrained()->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

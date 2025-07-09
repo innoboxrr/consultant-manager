@@ -27,29 +27,42 @@ class ConsultationPrice extends Model
         ConsultationPriceMutators;
         
     protected $fillable = [
-        //FILLABLE//
+        'type',
+        'amount',
+        'payload',
+        'consulting_service_id',
     ];
 
     protected $creatable = [
-        //CREATABLE//
+        'type',
+        'amount',
+        'payload',
+        'consulting_service_id',
     ];
 
     protected $updatable = [
-        //UPDATABLE//
+        'type',
+        'amount',
+        'payload',
     ];
 
     protected $casts = [
-        //CASTS//
+        'amount' => 'decimal:2',
+        'payload' => 'array',
     ];
 
     protected $protected_metas = [];
 
-    protected $editable_metas = [
-        //EDITABLEMETAS//
-    ];
+    protected $editable_metas = [];
 
     public static $export_cols = [
-        //EXPORTCOLS//
+        'id',
+        'type',
+        'amount',
+        'payload',
+        'consulting_service_id',
+        'created_at',
+        'updated_at',
     ];
 
     public static $loadable_relations = [

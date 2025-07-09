@@ -15,7 +15,9 @@ return new class extends Migration
     {
         Schema::create('consultants', function (Blueprint $table) {
             $table->id();
-            //EDIT//
+            $table->string('status');
+            $table->json('payload')->nullable(); // currency, payment_mode, CLABE
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

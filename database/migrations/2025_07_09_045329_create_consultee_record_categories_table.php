@@ -15,7 +15,9 @@ return new class extends Migration
     {
         Schema::create('consultee_record_categories', function (Blueprint $table) {
             $table->id();
-            //EDIT//
+            $table->string('name');
+            $table->foreignId('parent_id')->nullable()->constrained('consultee_record_categories')->onDelete('set null');
+            $table->foreignId('consultee_record_id')->constrained()->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

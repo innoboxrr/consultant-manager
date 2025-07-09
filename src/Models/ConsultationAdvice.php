@@ -27,29 +27,37 @@ class ConsultationAdvice extends Model
         ConsultationAdviceMutators;
         
     protected $fillable = [
-        //FILLABLE//
+        'status',
+        'payload',
+        'consultation_session_id',
     ];
 
     protected $creatable = [
-        //CREATABLE//
+        'status',
+        'payload',
+        'consultation_session_id',
     ];
 
     protected $updatable = [
-        //UPDATABLE//
+        'status',
+        'payload',
     ];
 
     protected $casts = [
-        //CASTS//
+        'payload' => 'array',
     ];
 
     protected $protected_metas = [];
 
-    protected $editable_metas = [
-        //EDITABLEMETAS//
-    ];
+    protected $editable_metas = [];
 
     public static $export_cols = [
-        //EXPORTCOLS//
+        'id',
+        'status',
+        'payload',
+        'consultation_session_id',
+        'created_at',
+        'updated_at',
     ];
 
     public static $loadable_relations = [

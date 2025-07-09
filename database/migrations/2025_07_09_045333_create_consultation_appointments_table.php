@@ -15,7 +15,13 @@ return new class extends Migration
     {
         Schema::create('consultation_appointments', function (Blueprint $table) {
             $table->id();
-            //EDIT//
+            $table->string('type'); // offline / online
+            $table->string('status');
+            $table->unsignedBigInteger('start_time')->nullable(); // UNIX timestamp
+            $table->unsignedBigInteger('end_time')->nullable();   // UNIX timestamp
+            $table->json('payload')->nullable();
+            $table->string('room_url')->nullable();
+            $table->foreignId('consultation_session_id')->constrained()->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

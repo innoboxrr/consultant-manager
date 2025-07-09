@@ -27,31 +27,42 @@ class ConsultationSessionService extends Model
         ConsultationSessionServiceMutators;
         
     protected $fillable = [
-        //FILLABLE//
+        'status',
+        'responses',
+        'consultation_service_id',
+        'consultation_session_id',
     ];
 
     protected $creatable = [
-        //CREATABLE//
+        'status',
+        'responses',
+        'consultation_service_id',
+        'consultation_session_id',
     ];
 
     protected $updatable = [
-        //UPDATABLE//
+        'status',
+        'responses',
     ];
 
     protected $casts = [
-        //CASTS//
+        'responses' => 'array',
     ];
 
     protected $protected_metas = [];
 
-    protected $editable_metas = [
-        //EDITABLEMETAS//
-    ];
+    protected $editable_metas = [];
 
     public static $export_cols = [
-        //EXPORTCOLS//
+        'id',
+        'status',
+        'responses',
+        'consultation_service_id',
+        'consultation_session_id',
+        'created_at',
+        'updated_at',
     ];
-
+    
     public static $loadable_relations = [
         //LOADABLERELATIONS//
     ];

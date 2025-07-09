@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('consultation_chats', function (Blueprint $table) {
             $table->id();
-            //EDIT//
+            $table->foreignId('consultation_session_id')->constrained()->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

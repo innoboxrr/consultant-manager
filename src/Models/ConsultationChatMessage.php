@@ -27,29 +27,46 @@ class ConsultationChatMessage extends Model
         ConsultationChatMessageMutators;
         
     protected $fillable = [
-        //FILLABLE//
+        'content',
+        'file_path',
+        'response_to',
+        'owner_type',
+        'owner_id',
+        'consultation_chat_id',
     ];
 
     protected $creatable = [
-        //CREATABLE//
+        'content',
+        'file_path',
+        'response_to',
+        'owner_type',
+        'owner_id',
+        'consultation_chat_id',
     ];
 
     protected $updatable = [
-        //UPDATABLE//
+        'content',
+        'file_path',
     ];
 
     protected $casts = [
-        //CASTS//
+        'response_to' => 'integer',
     ];
 
     protected $protected_metas = [];
 
-    protected $editable_metas = [
-        //EDITABLEMETAS//
-    ];
+    protected $editable_metas = [];
 
     public static $export_cols = [
-        //EXPORTCOLS//
+        'id',
+        'content',
+        'file_path',
+        'response_to',
+        'owner_type',
+        'owner_id',
+        'consultation_chat_id',
+        'created_at',
+        'updated_at',
     ];
 
     public static $loadable_relations = [

@@ -15,7 +15,11 @@ return new class extends Migration
     {
         Schema::create('consultant_availabilities', function (Blueprint $table) {
             $table->id();
-            //EDIT//
+            $table->string('day_of_week'); // Ej: Monday, Tuesday...
+            $table->time('start_time');
+            $table->time('end_time');
+            $table->unsignedInteger('max_sessions');
+            $table->foreignId('consultant_id')->constrained()->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

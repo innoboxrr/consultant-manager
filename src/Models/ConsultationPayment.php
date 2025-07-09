@@ -27,29 +27,55 @@ class ConsultationPayment extends Model
         ConsultationPaymentMutators;
         
     protected $fillable = [
-        //FILLABLE//
+        'status',
+        'revenue',
+        'fee',
+        'amount',
+        'payload',
+        'consultation_price_id',
+        'consultation_session_id',
     ];
 
     protected $creatable = [
-        //CREATABLE//
+        'status',
+        'revenue',
+        'fee',
+        'amount',
+        'payload',
+        'consultation_price_id',
+        'consultation_session_id',
     ];
 
     protected $updatable = [
-        //UPDATABLE//
+        'status',
+        'revenue',
+        'fee',
+        'amount',
+        'payload',
     ];
 
     protected $casts = [
-        //CASTS//
+        'revenue' => 'decimal:2',
+        'fee' => 'decimal:2',
+        'amount' => 'decimal:2',
+        'payload' => 'array',
     ];
 
     protected $protected_metas = [];
 
-    protected $editable_metas = [
-        //EDITABLEMETAS//
-    ];
+    protected $editable_metas = [];
 
     public static $export_cols = [
-        //EXPORTCOLS//
+        'id',
+        'status',
+        'revenue',
+        'fee',
+        'amount',
+        'payload',
+        'consultation_price_id',
+        'consultation_session_id',
+        'created_at',
+        'updated_at',
     ];
 
     public static $loadable_relations = [

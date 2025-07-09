@@ -27,29 +27,35 @@ class ConsultationAppointmentAttendee extends Model
         ConsultationAppointmentAttendeeMutators;
         
     protected $fillable = [
-        //FILLABLE//
+        'owner_type',
+        'owner_id',
+        'consultation_appointment_id',
     ];
 
     protected $creatable = [
-        //CREATABLE//
+        'owner_type',
+        'owner_id',
+        'consultation_appointment_id',
     ];
 
     protected $updatable = [
-        //UPDATABLE//
+        'owner_type',
+        'owner_id',
     ];
 
-    protected $casts = [
-        //CASTS//
-    ];
+    protected $casts = [];
 
     protected $protected_metas = [];
 
-    protected $editable_metas = [
-        //EDITABLEMETAS//
-    ];
+    protected $editable_metas = [];
 
     public static $export_cols = [
-        //EXPORTCOLS//
+        'id',
+        'owner_type',
+        'owner_id',
+        'consultation_appointment_id',
+        'created_at',
+        'updated_at',
     ];
 
     public static $loadable_relations = [

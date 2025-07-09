@@ -15,9 +15,13 @@ return new class extends Migration
     {
         Schema::create('consultation_appointment_attendees', function (Blueprint $table) {
             $table->id();
-            //EDIT//
+            $table->string('owner_type'); // Consultant | Consultee
+            $table->unsignedBigInteger('owner_id');
+            $table->foreignId('consultation_appointment_id')->constrained()->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
+
+            $table->index(['owner_type', 'owner_id']);
         });
     }
 

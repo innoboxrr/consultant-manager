@@ -27,29 +27,40 @@ class ConsultantTeamMember extends Model
         ConsultantTeamMemberMutators;
         
     protected $fillable = [
-        //FILLABLE//
+        'status',
+        'role',
+        'consultant_id',
+        'user_id',
     ];
 
     protected $creatable = [
-        //CREATABLE//
+        'status',
+        'role',
+        'consultant_id',
+        'user_id',
     ];
 
     protected $updatable = [
-        //UPDATABLE//
+        'status',
+        'role',
     ];
 
     protected $casts = [
-        //CASTS//
+        //
     ];
 
     protected $protected_metas = [];
 
-    protected $editable_metas = [
-        //EDITABLEMETAS//
-    ];
+    protected $editable_metas = [];
 
     public static $export_cols = [
-        //EXPORTCOLS//
+        'id',
+        'status',
+        'role',
+        'consultant_id',
+        'user_id',
+        'created_at',
+        'updated_at',
     ];
 
     public static $loadable_relations = [

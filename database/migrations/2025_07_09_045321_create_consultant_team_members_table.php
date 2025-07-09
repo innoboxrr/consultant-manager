@@ -15,7 +15,10 @@ return new class extends Migration
     {
         Schema::create('consultant_team_members', function (Blueprint $table) {
             $table->id();
-            //EDIT//
+            $table->string('status');
+            $table->string('role');
+            $table->foreignId('consultant_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

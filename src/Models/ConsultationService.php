@@ -27,29 +27,59 @@ class ConsultationService extends Model
         ConsultationServiceMutators;
         
     protected $fillable = [
-        //FILLABLE//
+        'title',
+        'status',
+        'type',
+        'description',
+        'payload',
+        'duration',
+        'requires_approval',
+        'consultant_id',
     ];
 
     protected $creatable = [
-        //CREATABLE//
+        'title',
+        'status',
+        'type',
+        'description',
+        'payload',
+        'duration',
+        'requires_approval',
+        'consultant_id',
     ];
 
     protected $updatable = [
-        //UPDATABLE//
+        'title',
+        'status',
+        'type',
+        'description',
+        'payload',
+        'duration',
+        'requires_approval',
     ];
 
     protected $casts = [
-        //CASTS//
+        'payload' => 'array',
+        'requires_approval' => 'boolean',
+        'duration' => 'integer',
     ];
 
     protected $protected_metas = [];
 
-    protected $editable_metas = [
-        //EDITABLEMETAS//
-    ];
+    protected $editable_metas = [];
 
     public static $export_cols = [
-        //EXPORTCOLS//
+        'id',
+        'title',
+        'status',
+        'type',
+        'description',
+        'payload',
+        'duration',
+        'requires_approval',
+        'consultant_id',
+        'created_at',
+        'updated_at',
     ];
 
     public static $loadable_relations = [

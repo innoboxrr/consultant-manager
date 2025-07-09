@@ -15,7 +15,10 @@ return new class extends Migration
     {
         Schema::create('consultation_evaluations', function (Blueprint $table) {
             $table->id();
-            //EDIT//
+            $table->unsignedTinyInteger('rating'); // 1–5, por ejemplo
+            $table->text('comment')->nullable();
+            $table->string('status');
+            $table->foreignId('consultation_session_id')->constrained()->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

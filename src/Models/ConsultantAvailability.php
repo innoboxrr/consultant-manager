@@ -27,29 +27,47 @@ class ConsultantAvailability extends Model
         ConsultantAvailabilityMutators;
         
     protected $fillable = [
-        //FILLABLE//
+        'day_of_week',
+        'start_time',
+        'end_time',
+        'max_sessions',
+        'consultant_id',
     ];
 
     protected $creatable = [
-        //CREATABLE//
+        'day_of_week',
+        'start_time',
+        'end_time',
+        'max_sessions',
+        'consultant_id',
     ];
 
     protected $updatable = [
-        //UPDATABLE//
+        'day_of_week',
+        'start_time',
+        'end_time',
+        'max_sessions',
     ];
 
     protected $casts = [
-        //CASTS//
+        'start_time' => 'datetime:H:i',
+        'end_time' => 'datetime:H:i',
+        'max_sessions' => 'integer',
     ];
 
     protected $protected_metas = [];
 
-    protected $editable_metas = [
-        //EDITABLEMETAS//
-    ];
+    protected $editable_metas = [];
 
     public static $export_cols = [
-        //EXPORTCOLS//
+        'id',
+        'day_of_week',
+        'start_time',
+        'end_time',
+        'max_sessions',
+        'consultant_id',
+        'created_at',
+        'updated_at',
     ];
 
     public static $loadable_relations = [
