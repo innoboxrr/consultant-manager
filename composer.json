@@ -1,0 +1,17 @@
+{
+    "name": "innoboxrr/consultant-manager",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Innoboxrr\\ConsultantManager\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Homero Raul",
+            "email": "h.raulvc@gmail.com"
+        }
+    ],
+    "require": {}
+}
