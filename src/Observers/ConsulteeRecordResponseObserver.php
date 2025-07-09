@@ -1,0 +1,56 @@
+<?php
+ 
+namespace Innoboxrr\ConsultantManager\Observers;
+ 
+use Innoboxrr\ConsultantManager\Models\ConsulteeRecordResponse;
+ 
+class ConsulteeRecordResponseObserver
+{
+
+    /**
+     * Handle events after all transactions are committed.
+     *
+     * @var bool
+     */
+    // public $afterCommit = true;
+
+    /**
+     * Handle the ConsulteeRecordResponse "created" event.
+     */
+    public function created(ConsulteeRecordResponse $consulteeRecordResponse): void
+    {
+        // Remove if laravel-audit is used: $consulteeRecordResponse->log('created');
+    }
+ 
+    /**
+     * Handle the ConsulteeRecordResponse "updated" event.
+     */
+    public function updated(ConsulteeRecordResponse $consulteeRecordResponse): void
+    {
+        // Remove if laravel-audit is used: $consulteeRecordResponse->log('updated');
+    }
+ 
+    /**
+     * Handle the ConsulteeRecordResponse "deleted" event.
+     */
+    public function deleted(ConsulteeRecordResponse $consulteeRecordResponse): void
+    {
+        // Remove if laravel-audit is used: $consulteeRecordResponse->log('deleted');
+    }
+ 
+    /**
+     * Handle the ConsulteeRecordResponse "restored" event.
+     */
+    public function restored(ConsulteeRecordResponse $consulteeRecordResponse): void
+    {
+        // Remove if laravel-audit is used: $consulteeRecordResponse->log('restored');
+    }
+ 
+    /**
+     * Handle the ConsulteeRecordResponse "forceDeleted" event.
+     */
+    public function forceDeleted(ConsulteeRecordResponse $consulteeRecordResponse): void
+    {
+        // Remove if laravel-audit is used: $consulteeRecordResponse->log('forceDeleted');
+    }
+}

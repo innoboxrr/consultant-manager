@@ -1,0 +1,40 @@
+<?php
+
+namespace Innoboxrr\ConsultantManager\Exports;
+
+use Innoboxrr\ConsultantManager\Models\ConsultationPostAttachment;
+use Innoboxrr\SearchSurge\Search\Builder;
+use Illuminate\Contracts\View\View;
+use Maatwebsite\Excel\Concerns\FromView;
+
+class ConsultationPostAttachmentsExports implements FromView
+{
+
+    protected $data;
+
+    public function __construct( array $data) 
+    {
+        $this->data = $data;
+    }
+
+    public function view(): View
+    {
+        return view(
+            config(
+                'innoboxrrconsultantmanager.excel_view', 
+                'innoboxrrconsultantmanager::excel.'
+            ) . 'consultation_post_attachment', 
+            [
+                'consultation_post_attachments' => $this->getQuery(),
+                'exportCols' => ConsultationPostAttachment::$export_cols
+            ]
+        );
+    }
+
+    public function getQuery()
+    {   
+        $builder = new Builder();
+        return $builder->get(ConsultationPostAttachment::class, $this->data);
+    }
+
+}
