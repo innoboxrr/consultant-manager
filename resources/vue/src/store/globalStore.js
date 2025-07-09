@@ -23,7 +23,7 @@ export const useGlobalStore = defineStore('consultant-manager-global', {
             {
                 id: 1,
                 name: __cm('Programs'),
-                description: __cm('View and manage your affiliate programs'),
+                description: __cm('View and manage your programs'),
                 icon: 'fa-solid fa-cubes',
                 status: 'active',
                 route: { name: 'AdminAffiliatePrograms' },
