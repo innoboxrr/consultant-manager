@@ -21,8 +21,8 @@ class ConsultationChatMessagesExports implements FromView
     {
         return view(
             config(
-                'innoboxrrconsultantmanager.excel_view', 
-                'innoboxrrconsultantmanager::excel.'
+                'consultant-manager.excel_view', 
+                'consultant-manager::excel.'
             ) . 'consultation_chat_message', 
             [
                 'consultation_chat_messages' => $this->getQuery(),

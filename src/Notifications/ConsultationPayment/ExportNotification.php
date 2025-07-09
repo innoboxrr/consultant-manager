@@ -25,7 +25,7 @@ class ExportNotification extends Notification
 
     public function via($notifiable)
     {
-        return config('innoboxrrconsultantmanager.notification_via', ['mail', 'database']);
+        return config('consultant-manager.notification_via', ['mail', 'database']);
     }
 
     public function toMail($notifiable)
@@ -55,7 +55,7 @@ class ExportNotification extends Notification
         Excel::store(
             new ConsultationPaymentsExports($this->data), 
             $this->path, 
-            config('innoboxrrconsultantmanager.export_disk', 's3')
+            config('consultant-manager.export_disk', 's3')
         );
     }
 

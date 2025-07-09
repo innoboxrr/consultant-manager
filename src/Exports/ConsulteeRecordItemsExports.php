@@ -21,8 +21,8 @@ class ConsulteeRecordItemsExports implements FromView
     {
         return view(
             config(
-                'innoboxrrconsultantmanager.excel_view', 
-                'innoboxrrconsultantmanager::excel.'
+                'consultant-manager.excel_view', 
+                'consultant-manager::excel.'
             ) . 'consultee_record_item', 
             [
                 'consultee_record_items' => $this->getQuery(),

@@ -21,8 +21,8 @@ class ConsultationAppointmentAttendeesExports implements FromView
     {
         return view(
             config(
-                'innoboxrrconsultantmanager.excel_view', 
-                'innoboxrrconsultantmanager::excel.'
+                'consultant-manager.excel_view', 
+                'consultant-manager::excel.'
             ) . 'consultation_appointment_attendee', 
             [
                 'consultation_appointment_attendees' => $this->getQuery(),

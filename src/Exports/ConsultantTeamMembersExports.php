@@ -21,8 +21,8 @@ class ConsultantTeamMembersExports implements FromView
     {
         return view(
             config(
-                'innoboxrrconsultantmanager.excel_view', 
-                'innoboxrrconsultantmanager::excel.'
+                'consultant-manager.excel_view', 
+                'consultant-manager::excel.'
             ) . 'consultant_team_member', 
             [
                 'consultant_team_members' => $this->getQuery(),

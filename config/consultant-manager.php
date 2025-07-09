@@ -4,7 +4,7 @@ return [
 
 	'user_class' => 'App\Models\User',
 
-	'excel_view' => 'innoboxrrconsultantmanager::excel.',
+	'excel_view' => 'consultant-manager::excel.',
 
 	'notification_via' => ['mail', 'database'],
 

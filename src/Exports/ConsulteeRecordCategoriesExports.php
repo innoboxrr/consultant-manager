@@ -21,8 +21,8 @@ class ConsulteeRecordCategoriesExports implements FromView
     {
         return view(
             config(
-                'innoboxrrconsultantmanager.excel_view', 
-                'innoboxrrconsultantmanager::excel.'
+                'consultant-manager.excel_view', 
+                'consultant-manager::excel.'
             ) . 'consultee_record_category', 
             [
                 'consultee_record_categories' => $this->getQuery(),
