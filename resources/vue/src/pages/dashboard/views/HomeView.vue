@@ -5,7 +5,7 @@
 </template>
 
 <script>
-    import UnderConstruction from "@consultantManager/components/partials/UnderConstruction.vue";
+    import UnderConstruction from "@consultantManagerComponents/partials/UnderConstruction.vue";
 
     export default {
         name: "ConsultantManagerDashboardHomeView",
