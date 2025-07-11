@@ -1,5 +1,6 @@
 <template>
     <div v-if="dataLoaded">
+        
         <TransitionRoot as="template" :show="sidebarOpen">
             <Dialog class="relative z-50 xl:hidden" @close="sidebarOpen = false">
                 <TransitionChild
@@ -44,7 +45,7 @@
                                     </button>
                                 </div>
                             </TransitionChild>
-                            <div class="flex grow flex-col gap-y-5 md:ml-14 ml-0 overflow-y-auto bg-white px-6 ring-1 ring-gray-200">
+                            <div class="flex grow flex-col gap-y-5 sm:ml-14 ml-0 overflow-y-auto bg-white px-6 ring-1 ring-gray-200">
                                 <div class="flex h-16 shrink-0 items-center">
                                 <img
                                     class="h-8 w-auto"
@@ -59,15 +60,17 @@
             </Dialog>
         </TransitionRoot>
 
-        <div v-if="showSidebar" class="hidden xl:fixed xl:inset-y-0 xl:z-50 xl:flex xl:w-72 xl:flex-col sm:w-full md:w-1/2">
-            <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-50 px-6 ring-1 ring-gray-200 mt-12">
+        <div 
+            v-if="showSidebar" 
+            class="hidden xl:fixed xl:inset-y-0 xl:z-50 xl:flex xl:w-[220px] xl:flex-col sm:w-full md:w-1/2">
+            <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-50 px-4 ring-1 ring-gray-200 mt-12">
                 <sidebar-menu class="mt-4" />
             </div>
         </div>
 
         <div 
 			class="flex flex-col"
-			:class="{'xl:pl-72': showSidebar}"
+			:class="{'xl:pl-[220px]': showSidebar}"
 			style="height: calc(100vh - 54px)">
             <search-header @open-sidebar="toggleSidebar" />
             <div class="flex flex-1 overflow-hidden">

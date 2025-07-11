@@ -8,7 +8,7 @@
     import UnderConstruction from "@consultantManagerComponents/partials/UnderConstruction.vue";
 
     export default {
-        name: "ConsultantManagerDashboardHomeView",
+        name: "ConsultantDashboard",
         components: {
             UnderConstruction,
         },

@@ -1,58 +1,107 @@
 import { defineStore } from 'pinia'
 import { __cm } from './../utils/translate.js'
-import { 
-    HomeIcon,
-    CubeIcon,
-    MegaphoneIcon,
-    BriefcaseIcon,
-    UserGroupIcon,
-    ShareIcon,
-    BuildingStorefrontIcon,
-    DocumentTextIcon,
-    UsersIcon,
+import {
+    ChatBubbleBottomCenterTextIcon,
+    CalendarIcon,
+    ClipboardDocumentListIcon,
 } from '@heroicons/vue/24/outline'
 
 export const useGlobalStore = defineStore('consultant-manager-global', {
     state: () => ({
         sidebarOpen: false,
-        navigation: [
-            { name: __cm('Dashboard'), route: { name: 'ConsultantManagerDashboard' }, icon: HomeIcon, current: true },
-        ],
-        modelsNav: [
-            /*
+
+        servicesNav: [
             {
-                id: 1,
-                name: __cm('Programs'),
-                description: __cm('View and manage your programs'),
-                icon: 'fa-solid fa-cubes',
-                status: 'active',
-                route: { name: 'AdminAffiliatePrograms' },
+                name: __cm('Consultancy'),
+                description: __cm('Get professional advice on your case'),
+                icon: ClipboardDocumentListIcon,
+                route: { name: 'ConsultantManagerServicesAdviceThread' },
                 current: false,
             },
-            */
-        ],
-        activityItems: [
-            /*
             {
-                user: {
-                    name: 'Michael Foster',
-                    imageUrl: 'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-                },
-                action: 'Renovó el dominio example.com',
-                date: 'Hace 1h',
-                dateTime: '2023-01-23T11:00',
+                name: __cm('Appointments'),
+                description: __cm('Book and manage your appointments'),
+                icon: CalendarIcon,
+                route: { name: 'ConsultantManagerServicesAppointmentMeeting' },
+                current: false,
             },
-            */
+            {
+                name: __cm('Communication'),
+                description: __cm('Chat and communicate with your consultant'),
+                icon: ChatBubbleBottomCenterTextIcon,
+                route: { name: 'ConsultantManagerServicesCommunication' },
+                current: false,
+            },
+        ],
+        
+        consultantNav: [
+            {
+                name: __cm('Dashboard'),
+                route: { name: 'ConsultantManagerConsultantDashboard' },
+                icon: 'fa-solid fa-house',
+                current: false,
+            },
+            {
+                name: __cm('Services'),
+                route: { name: 'ConsultantManagerConsultantServices' },
+                icon: 'fa-solid fa-cubes',
+                current: false,
+            },
+            {
+                name: __cm('Clients'),
+                route: { name: 'ConsultantManagerConsultantClients' },
+                icon: 'fa-solid fa-users',
+                current: false,
+            },
+            {
+                name: __cm('Financials'),
+                route: { name: 'ConsultantManagerConsultantFinancials' },
+                icon: 'fa-solid fa-briefcase',
+                current: false,
+            },
+            {
+                name: __cm('Profile'),
+                route: { name: 'ConsultantManagerConsultantProfile' },
+                icon: 'fa-solid fa-user',
+                current: false,
+            },
+            {
+                name: __cm('Resources'),
+                route: { name: 'ConsultantManagerConsultantResources' },
+                icon: 'fa-solid fa-table-cells-large',
+                current: false,
+            },
+        ],
+
+        consulteeNav: [
+            {
+                name: __cm('Home'),
+                description: __cm('Your dashboard and next steps'),
+                icon: 'fa-solid fa-house',
+                route: { name: 'ConsultantManagerConsulteeDashboard' },
+                current: false,
+            },
+            {
+                name: __cm('Profile'),
+                description: __cm('Manage your account details'),
+                icon: 'fa-solid fa-user',
+                route: { name: 'ConsultantManagerConsulteeProfile' },
+                current: false,
+            },
         ],
     }),
+
     actions: {
         setCurrentRoute(routeName) {
-            this.navigation.forEach(item => {
-                item.current = item.route.name === routeName;
-            });
-            this.modelsNav.forEach(item => {
-                item.current = item.route.name === routeName;
-            });
+            const allNavs = [
+                ...this.consultantNav,
+                ...this.consulteeNav,
+                ...this.servicesNav,
+            ]
+
+            allNavs.forEach(item => {
+                item.current = item.route.name === routeName
+            })
         },
     },
 })

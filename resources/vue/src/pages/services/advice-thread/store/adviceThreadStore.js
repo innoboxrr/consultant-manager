@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 
-export const useDashboardStore = defineStore('consultant-manager-pages-dashboard', {
+export const useAdviceThreadStore = defineStore('cmp-advice-thread', {
     state: () => ({
         
     }),

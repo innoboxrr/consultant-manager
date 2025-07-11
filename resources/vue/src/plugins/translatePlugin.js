@@ -7,6 +7,7 @@ const defaultTranslations = { es, en };
 
 export default {
     install(app, options = {}) {
+
         // En lugar de llamar inmediatamente a useTranslationsStore(),
         // definimos una función que la invoque cuando se requiera.
         const getTranslationsStore = () => {
