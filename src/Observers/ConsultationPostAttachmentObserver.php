@@ -19,7 +19,7 @@ class ConsultationPostAttachmentObserver
      */
     public function created(ConsultationPostAttachment $consultationPostAttachment): void
     {
-        // Remove if laravel-audit is used: $consultationPostAttachment->log('created');
+        $consultationPostAttachment->log('created');
     }
  
     /**
@@ -27,7 +27,7 @@ class ConsultationPostAttachmentObserver
      */
     public function updated(ConsultationPostAttachment $consultationPostAttachment): void
     {
-        // Remove if laravel-audit is used: $consultationPostAttachment->log('updated');
+        $consultationPostAttachment->log('updated');
     }
  
     /**
@@ -35,7 +35,7 @@ class ConsultationPostAttachmentObserver
      */
     public function deleted(ConsultationPostAttachment $consultationPostAttachment): void
     {
-        // Remove if laravel-audit is used: $consultationPostAttachment->log('deleted');
+        $consultationPostAttachment->log('deleted');
     }
  
     /**
@@ -43,7 +43,7 @@ class ConsultationPostAttachmentObserver
      */
     public function restored(ConsultationPostAttachment $consultationPostAttachment): void
     {
-        // Remove if laravel-audit is used: $consultationPostAttachment->log('restored');
+        $consultationPostAttachment->log('restored');
     }
  
     /**
@@ -51,6 +51,6 @@ class ConsultationPostAttachmentObserver
      */
     public function forceDeleted(ConsultationPostAttachment $consultationPostAttachment): void
     {
-        // Remove if laravel-audit is used: $consultationPostAttachment->log('forceDeleted');
+        $consultationPostAttachment->log('forceDeleted');
     }
 }

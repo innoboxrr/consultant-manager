@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Innoboxrr\Traits\MetaOperations;
 use Innoboxrr\Traits\ModelAppendsTrait;
+use Innoboxrr\LaravelAudit\Support\Traits\Auditable;
 use Innoboxrr\ConsultantManager\Models\Traits\Relations\ConsultationChatMessageRelations;
 use Innoboxrr\ConsultantManager\Models\Traits\Storage\ConsultationChatMessageStorage;
 use Innoboxrr\ConsultantManager\Models\Traits\Assignments\ConsultationChatMessageAssignment;
@@ -20,6 +21,7 @@ class ConsultationChatMessage extends Model
         SoftDeletes,
         MetaOperations,
         ModelAppendsTrait,
+        Auditable,
         ConsultationChatMessageRelations,
         ConsultationChatMessageStorage,
         ConsultationChatMessageAssignment,

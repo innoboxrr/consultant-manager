@@ -15,8 +15,10 @@ return new class extends Migration
     {
         Schema::create('consultation_prices', function (Blueprint $table) {
             $table->id();
-            $table->string('type'); // fixed, per_minute, per_message, per_file, per_advice
+            $table->string('type'); // fixed, per_minute, per_message, per_advice, per_session
+            $table->unsignedInteger('quantity')->nullable(); // for per_minute, per_message, etc.
             $table->decimal('amount', 10, 2);
+            $table->string('currency')->default('USD'); // Default currency, can be changed as needed
             $table->json('payload')->nullable();
             $table->foreignId('consulting_service_id')->constrained('consultation_services')->onDelete('cascade');
             $table->timestamps();

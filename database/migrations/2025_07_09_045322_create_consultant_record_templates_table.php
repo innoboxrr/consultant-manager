@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('consultant_record_templates', function (Blueprint $table) {
             $table->id();
+            $table->string('name');                     // Nombre del template
+            $table->string('description')->nullable(); // Descripción opcional del template
+            
             $table->json('data')->nullable();
             $table->foreignId('consultant_id')->constrained()->onDelete('cascade');
             $table->timestamps();

@@ -34,7 +34,7 @@ class ConsultationIntakeFormsExports implements FromView
     public function getQuery()
     {   
         $builder = new Builder();
-        return $builder->get(ConsultationIntakeForm::class, $this->data);
+        return $builder->get(ConsultationIntakeForm::class, $this->data, config('consultant-manager.search-options'));
     }
 
 }

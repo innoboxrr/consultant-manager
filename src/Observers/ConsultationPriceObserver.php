@@ -19,7 +19,7 @@ class ConsultationPriceObserver
      */
     public function created(ConsultationPrice $consultationPrice): void
     {
-        // Remove if laravel-audit is used: $consultationPrice->log('created');
+        $consultationPrice->log('created');
     }
  
     /**
@@ -27,7 +27,7 @@ class ConsultationPriceObserver
      */
     public function updated(ConsultationPrice $consultationPrice): void
     {
-        // Remove if laravel-audit is used: $consultationPrice->log('updated');
+        $consultationPrice->log('updated');
     }
  
     /**
@@ -35,7 +35,7 @@ class ConsultationPriceObserver
      */
     public function deleted(ConsultationPrice $consultationPrice): void
     {
-        // Remove if laravel-audit is used: $consultationPrice->log('deleted');
+        $consultationPrice->log('deleted');
     }
  
     /**
@@ -43,7 +43,7 @@ class ConsultationPriceObserver
      */
     public function restored(ConsultationPrice $consultationPrice): void
     {
-        // Remove if laravel-audit is used: $consultationPrice->log('restored');
+        $consultationPrice->log('restored');
     }
  
     /**
@@ -51,6 +51,6 @@ class ConsultationPriceObserver
      */
     public function forceDeleted(ConsultationPrice $consultationPrice): void
     {
-        // Remove if laravel-audit is used: $consultationPrice->log('forceDeleted');
+        $consultationPrice->log('forceDeleted');
     }
 }

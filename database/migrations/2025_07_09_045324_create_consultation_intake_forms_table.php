@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('consultation_intake_forms', function (Blueprint $table) {
             $table->id();
+            $table->string('name');                     // Nombre del formulario
+            $table->string('description')->nullable(); // Descripción opcional del formulario
             $table->json('questions')->nullable();
             $table->foreignId('consultation_session_id')->constrained()->onDelete('cascade');
             $table->timestamps();

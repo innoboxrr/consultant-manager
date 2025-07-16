@@ -19,7 +19,7 @@ class ConsultationPaymentObserver
      */
     public function created(ConsultationPayment $consultationPayment): void
     {
-        // Remove if laravel-audit is used: $consultationPayment->log('created');
+        $consultationPayment->log('created');
     }
  
     /**
@@ -27,7 +27,7 @@ class ConsultationPaymentObserver
      */
     public function updated(ConsultationPayment $consultationPayment): void
     {
-        // Remove if laravel-audit is used: $consultationPayment->log('updated');
+        $consultationPayment->log('updated');
     }
  
     /**
@@ -35,7 +35,7 @@ class ConsultationPaymentObserver
      */
     public function deleted(ConsultationPayment $consultationPayment): void
     {
-        // Remove if laravel-audit is used: $consultationPayment->log('deleted');
+        $consultationPayment->log('deleted');
     }
  
     /**
@@ -43,7 +43,7 @@ class ConsultationPaymentObserver
      */
     public function restored(ConsultationPayment $consultationPayment): void
     {
-        // Remove if laravel-audit is used: $consultationPayment->log('restored');
+        $consultationPayment->log('restored');
     }
  
     /**
@@ -51,6 +51,6 @@ class ConsultationPaymentObserver
      */
     public function forceDeleted(ConsultationPayment $consultationPayment): void
     {
-        // Remove if laravel-audit is used: $consultationPayment->log('forceDeleted');
+        $consultationPayment->log('forceDeleted');
     }
 }

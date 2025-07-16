@@ -19,7 +19,7 @@ class ConsultationIntakeFormObserver
      */
     public function created(ConsultationIntakeForm $consultationIntakeForm): void
     {
-        // Remove if laravel-audit is used: $consultationIntakeForm->log('created');
+        $consultationIntakeForm->log('created');
     }
  
     /**
@@ -27,7 +27,7 @@ class ConsultationIntakeFormObserver
      */
     public function updated(ConsultationIntakeForm $consultationIntakeForm): void
     {
-        // Remove if laravel-audit is used: $consultationIntakeForm->log('updated');
+        $consultationIntakeForm->log('updated');
     }
  
     /**
@@ -35,7 +35,7 @@ class ConsultationIntakeFormObserver
      */
     public function deleted(ConsultationIntakeForm $consultationIntakeForm): void
     {
-        // Remove if laravel-audit is used: $consultationIntakeForm->log('deleted');
+        $consultationIntakeForm->log('deleted');
     }
  
     /**
@@ -43,7 +43,7 @@ class ConsultationIntakeFormObserver
      */
     public function restored(ConsultationIntakeForm $consultationIntakeForm): void
     {
-        // Remove if laravel-audit is used: $consultationIntakeForm->log('restored');
+        $consultationIntakeForm->log('restored');
     }
  
     /**
@@ -51,6 +51,6 @@ class ConsultationIntakeFormObserver
      */
     public function forceDeleted(ConsultationIntakeForm $consultationIntakeForm): void
     {
-        // Remove if laravel-audit is used: $consultationIntakeForm->log('forceDeleted');
+        $consultationIntakeForm->log('forceDeleted');
     }
 }

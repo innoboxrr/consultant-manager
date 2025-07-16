@@ -19,7 +19,7 @@ class ConsulteeRecordItemObserver
      */
     public function created(ConsulteeRecordItem $consulteeRecordItem): void
     {
-        // Remove if laravel-audit is used: $consulteeRecordItem->log('created');
+        $consulteeRecordItem->log('created');
     }
  
     /**
@@ -27,7 +27,7 @@ class ConsulteeRecordItemObserver
      */
     public function updated(ConsulteeRecordItem $consulteeRecordItem): void
     {
-        // Remove if laravel-audit is used: $consulteeRecordItem->log('updated');
+        $consulteeRecordItem->log('updated');
     }
  
     /**
@@ -35,7 +35,7 @@ class ConsulteeRecordItemObserver
      */
     public function deleted(ConsulteeRecordItem $consulteeRecordItem): void
     {
-        // Remove if laravel-audit is used: $consulteeRecordItem->log('deleted');
+        $consulteeRecordItem->log('deleted');
     }
  
     /**
@@ -43,7 +43,7 @@ class ConsulteeRecordItemObserver
      */
     public function restored(ConsulteeRecordItem $consulteeRecordItem): void
     {
-        // Remove if laravel-audit is used: $consulteeRecordItem->log('restored');
+        $consulteeRecordItem->log('restored');
     }
  
     /**
@@ -51,6 +51,6 @@ class ConsulteeRecordItemObserver
      */
     public function forceDeleted(ConsulteeRecordItem $consulteeRecordItem): void
     {
-        // Remove if laravel-audit is used: $consulteeRecordItem->log('forceDeleted');
+        $consulteeRecordItem->log('forceDeleted');
     }
 }

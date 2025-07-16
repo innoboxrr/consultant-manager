@@ -19,7 +19,7 @@ class ConsultantTeamMemberObserver
      */
     public function created(ConsultantTeamMember $consultantTeamMember): void
     {
-        // Remove if laravel-audit is used: $consultantTeamMember->log('created');
+        $consultantTeamMember->log('created');
     }
  
     /**
@@ -27,7 +27,7 @@ class ConsultantTeamMemberObserver
      */
     public function updated(ConsultantTeamMember $consultantTeamMember): void
     {
-        // Remove if laravel-audit is used: $consultantTeamMember->log('updated');
+        $consultantTeamMember->log('updated');
     }
  
     /**
@@ -35,7 +35,7 @@ class ConsultantTeamMemberObserver
      */
     public function deleted(ConsultantTeamMember $consultantTeamMember): void
     {
-        // Remove if laravel-audit is used: $consultantTeamMember->log('deleted');
+        $consultantTeamMember->log('deleted');
     }
  
     /**
@@ -43,7 +43,7 @@ class ConsultantTeamMemberObserver
      */
     public function restored(ConsultantTeamMember $consultantTeamMember): void
     {
-        // Remove if laravel-audit is used: $consultantTeamMember->log('restored');
+        $consultantTeamMember->log('restored');
     }
  
     /**
@@ -51,6 +51,6 @@ class ConsultantTeamMemberObserver
      */
     public function forceDeleted(ConsultantTeamMember $consultantTeamMember): void
     {
-        // Remove if laravel-audit is used: $consultantTeamMember->log('forceDeleted');
+        $consultantTeamMember->log('forceDeleted');
     }
 }

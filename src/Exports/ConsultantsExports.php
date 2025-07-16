@@ -34,7 +34,7 @@ class ConsultantsExports implements FromView
     public function getQuery()
     {   
         $builder = new Builder();
-        return $builder->get(Consultant::class, $this->data);
+        return $builder->get(Consultant::class, $this->data, config('consultant-manager.search-options'));
     }
 
 }

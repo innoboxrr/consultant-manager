@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Innoboxrr\Traits\MetaOperations;
 use Innoboxrr\Traits\ModelAppendsTrait;
+use Innoboxrr\LaravelAudit\Support\Traits\Auditable;
 use Innoboxrr\ConsultantManager\Models\Traits\Relations\ConsultationEvaluationRelations;
 use Innoboxrr\ConsultantManager\Models\Traits\Storage\ConsultationEvaluationStorage;
 use Innoboxrr\ConsultantManager\Models\Traits\Assignments\ConsultationEvaluationAssignment;
@@ -20,6 +21,7 @@ class ConsultationEvaluation extends Model
         SoftDeletes,
         MetaOperations,
         ModelAppendsTrait,
+        Auditable,
         ConsultationEvaluationRelations,
         ConsultationEvaluationStorage,
         ConsultationEvaluationAssignment,

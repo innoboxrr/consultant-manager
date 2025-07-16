@@ -34,7 +34,7 @@ class ConsultationPostsExports implements FromView
     public function getQuery()
     {   
         $builder = new Builder();
-        return $builder->get(ConsultationPost::class, $this->data);
+        return $builder->get(ConsultationPost::class, $this->data, config('consultant-manager.search-options'));
     }
 
 }

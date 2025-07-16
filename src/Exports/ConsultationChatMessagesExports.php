@@ -34,7 +34,7 @@ class ConsultationChatMessagesExports implements FromView
     public function getQuery()
     {   
         $builder = new Builder();
-        return $builder->get(ConsultationChatMessage::class, $this->data);
+        return $builder->get(ConsultationChatMessage::class, $this->data, config('consultant-manager.search-options'));
     }
 
 }

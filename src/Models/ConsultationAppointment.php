@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Innoboxrr\Traits\MetaOperations;
 use Innoboxrr\Traits\ModelAppendsTrait;
+use Innoboxrr\LaravelAudit\Support\Traits\Auditable;
 use Innoboxrr\ConsultantManager\Models\Traits\Relations\ConsultationAppointmentRelations;
 use Innoboxrr\ConsultantManager\Models\Traits\Storage\ConsultationAppointmentStorage;
 use Innoboxrr\ConsultantManager\Models\Traits\Assignments\ConsultationAppointmentAssignment;
@@ -20,6 +21,7 @@ class ConsultationAppointment extends Model
         SoftDeletes,
         MetaOperations,
         ModelAppendsTrait,
+        Auditable,
         ConsultationAppointmentRelations,
         ConsultationAppointmentStorage,
         ConsultationAppointmentAssignment,

@@ -34,7 +34,7 @@ class ConsultationEvaluationsExports implements FromView
     public function getQuery()
     {   
         $builder = new Builder();
-        return $builder->get(ConsultationEvaluation::class, $this->data);
+        return $builder->get(ConsultationEvaluation::class, $this->data, config('consultant-manager.search-options'));
     }
 
 }

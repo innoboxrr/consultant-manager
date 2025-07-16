@@ -19,7 +19,7 @@ class ConsultantRecordTemplateObserver
      */
     public function created(ConsultantRecordTemplate $consultantRecordTemplate): void
     {
-        // Remove if laravel-audit is used: $consultantRecordTemplate->log('created');
+        $consultantRecordTemplate->log('created');
     }
  
     /**
@@ -27,7 +27,7 @@ class ConsultantRecordTemplateObserver
      */
     public function updated(ConsultantRecordTemplate $consultantRecordTemplate): void
     {
-        // Remove if laravel-audit is used: $consultantRecordTemplate->log('updated');
+        $consultantRecordTemplate->log('updated');
     }
  
     /**
@@ -35,7 +35,7 @@ class ConsultantRecordTemplateObserver
      */
     public function deleted(ConsultantRecordTemplate $consultantRecordTemplate): void
     {
-        // Remove if laravel-audit is used: $consultantRecordTemplate->log('deleted');
+        $consultantRecordTemplate->log('deleted');
     }
  
     /**
@@ -43,7 +43,7 @@ class ConsultantRecordTemplateObserver
      */
     public function restored(ConsultantRecordTemplate $consultantRecordTemplate): void
     {
-        // Remove if laravel-audit is used: $consultantRecordTemplate->log('restored');
+        $consultantRecordTemplate->log('restored');
     }
  
     /**
@@ -51,6 +51,6 @@ class ConsultantRecordTemplateObserver
      */
     public function forceDeleted(ConsultantRecordTemplate $consultantRecordTemplate): void
     {
-        // Remove if laravel-audit is used: $consultantRecordTemplate->log('forceDeleted');
+        $consultantRecordTemplate->log('forceDeleted');
     }
 }

@@ -19,7 +19,7 @@ class ConsultantAvailabilityObserver
      */
     public function created(ConsultantAvailability $consultantAvailability): void
     {
-        // Remove if laravel-audit is used: $consultantAvailability->log('created');
+        $consultantAvailability->log('created');
     }
  
     /**
@@ -27,7 +27,7 @@ class ConsultantAvailabilityObserver
      */
     public function updated(ConsultantAvailability $consultantAvailability): void
     {
-        // Remove if laravel-audit is used: $consultantAvailability->log('updated');
+        $consultantAvailability->log('updated');
     }
  
     /**
@@ -35,7 +35,7 @@ class ConsultantAvailabilityObserver
      */
     public function deleted(ConsultantAvailability $consultantAvailability): void
     {
-        // Remove if laravel-audit is used: $consultantAvailability->log('deleted');
+        $consultantAvailability->log('deleted');
     }
  
     /**
@@ -43,7 +43,7 @@ class ConsultantAvailabilityObserver
      */
     public function restored(ConsultantAvailability $consultantAvailability): void
     {
-        // Remove if laravel-audit is used: $consultantAvailability->log('restored');
+        $consultantAvailability->log('restored');
     }
  
     /**
@@ -51,6 +51,6 @@ class ConsultantAvailabilityObserver
      */
     public function forceDeleted(ConsultantAvailability $consultantAvailability): void
     {
-        // Remove if laravel-audit is used: $consultantAvailability->log('forceDeleted');
+        $consultantAvailability->log('forceDeleted');
     }
 }

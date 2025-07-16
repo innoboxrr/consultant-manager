@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Innoboxrr\Traits\MetaOperations;
 use Innoboxrr\Traits\ModelAppendsTrait;
+use Innoboxrr\LaravelAudit\Support\Traits\Auditable;
 use Innoboxrr\ConsultantManager\Models\Traits\Relations\ConsulteeRelations;
 use Innoboxrr\ConsultantManager\Models\Traits\Storage\ConsulteeStorage;
 use Innoboxrr\ConsultantManager\Models\Traits\Assignments\ConsulteeAssignment;
@@ -20,6 +21,7 @@ class Consultee extends Model
         SoftDeletes,
         MetaOperations,
         ModelAppendsTrait,
+        Auditable,
         ConsulteeRelations,
         ConsulteeStorage,
         ConsulteeAssignment,

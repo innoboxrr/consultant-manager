@@ -19,7 +19,7 @@ class ConsultationAppointmentAttendeeObserver
      */
     public function created(ConsultationAppointmentAttendee $consultationAppointmentAttendee): void
     {
-        // Remove if laravel-audit is used: $consultationAppointmentAttendee->log('created');
+        $consultationAppointmentAttendee->log('created');
     }
  
     /**
@@ -27,7 +27,7 @@ class ConsultationAppointmentAttendeeObserver
      */
     public function updated(ConsultationAppointmentAttendee $consultationAppointmentAttendee): void
     {
-        // Remove if laravel-audit is used: $consultationAppointmentAttendee->log('updated');
+        $consultationAppointmentAttendee->log('updated');
     }
  
     /**
@@ -35,7 +35,7 @@ class ConsultationAppointmentAttendeeObserver
      */
     public function deleted(ConsultationAppointmentAttendee $consultationAppointmentAttendee): void
     {
-        // Remove if laravel-audit is used: $consultationAppointmentAttendee->log('deleted');
+        $consultationAppointmentAttendee->log('deleted');
     }
  
     /**
@@ -43,7 +43,7 @@ class ConsultationAppointmentAttendeeObserver
      */
     public function restored(ConsultationAppointmentAttendee $consultationAppointmentAttendee): void
     {
-        // Remove if laravel-audit is used: $consultationAppointmentAttendee->log('restored');
+        $consultationAppointmentAttendee->log('restored');
     }
  
     /**
@@ -51,6 +51,6 @@ class ConsultationAppointmentAttendeeObserver
      */
     public function forceDeleted(ConsultationAppointmentAttendee $consultationAppointmentAttendee): void
     {
-        // Remove if laravel-audit is used: $consultationAppointmentAttendee->log('forceDeleted');
+        $consultationAppointmentAttendee->log('forceDeleted');
     }
 }

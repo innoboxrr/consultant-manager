@@ -15,9 +15,13 @@ return new class extends Migration
     {
         Schema::create('consultants', function (Blueprint $table) {
             $table->id();
+            $table->string('type')->default('consultant');
             $table->string('status');
-            $table->json('payload')->nullable(); // currency, payment_mode, CLABE
+            $table->json('payload')->nullable();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->timestamp('verified_at')->nullable(); 
+            $table->timestamp('last_active_at')->nullable();
+            $table->timestamp('onboarded_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

@@ -15,12 +15,11 @@ return new class extends Migration
     {
         Schema::create('consultation_services', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('name');
             $table->string('status');
             $table->string('type'); // ADVICE, APPOINTMENT, CHAT
             $table->text('description')->nullable();
             $table->json('payload')->nullable();
-            $table->unsignedInteger('duration')->nullable(); // en minutos
             $table->boolean('requires_approval')->default(false);
             $table->foreignId('consultant_id')->constrained()->onDelete('cascade');
             $table->timestamps();

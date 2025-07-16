@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Innoboxrr\Traits\MetaOperations;
 use Innoboxrr\Traits\ModelAppendsTrait;
+use Innoboxrr\LaravelAudit\Support\Traits\Auditable;
 use Innoboxrr\ConsultantManager\Models\Traits\Relations\ConsultationPaymentRelations;
 use Innoboxrr\ConsultantManager\Models\Traits\Storage\ConsultationPaymentStorage;
 use Innoboxrr\ConsultantManager\Models\Traits\Assignments\ConsultationPaymentAssignment;
@@ -20,6 +21,7 @@ class ConsultationPayment extends Model
         SoftDeletes,
         MetaOperations,
         ModelAppendsTrait,
+        Auditable,
         ConsultationPaymentRelations,
         ConsultationPaymentStorage,
         ConsultationPaymentAssignment,

@@ -19,7 +19,7 @@ class ConsultationServiceObserver
      */
     public function created(ConsultationService $consultationService): void
     {
-        // Remove if laravel-audit is used: $consultationService->log('created');
+        $consultationService->log('created');
     }
  
     /**
@@ -27,7 +27,7 @@ class ConsultationServiceObserver
      */
     public function updated(ConsultationService $consultationService): void
     {
-        // Remove if laravel-audit is used: $consultationService->log('updated');
+        $consultationService->log('updated');
     }
  
     /**
@@ -35,7 +35,7 @@ class ConsultationServiceObserver
      */
     public function deleted(ConsultationService $consultationService): void
     {
-        // Remove if laravel-audit is used: $consultationService->log('deleted');
+        $consultationService->log('deleted');
     }
  
     /**
@@ -43,7 +43,7 @@ class ConsultationServiceObserver
      */
     public function restored(ConsultationService $consultationService): void
     {
-        // Remove if laravel-audit is used: $consultationService->log('restored');
+        $consultationService->log('restored');
     }
  
     /**
@@ -51,6 +51,6 @@ class ConsultationServiceObserver
      */
     public function forceDeleted(ConsultationService $consultationService): void
     {
-        // Remove if laravel-audit is used: $consultationService->log('forceDeleted');
+        $consultationService->log('forceDeleted');
     }
 }

@@ -34,7 +34,7 @@ class ConsulteeRecordResponsesExports implements FromView
     public function getQuery()
     {   
         $builder = new Builder();
-        return $builder->get(ConsulteeRecordResponse::class, $this->data);
+        return $builder->get(ConsulteeRecordResponse::class, $this->data, config('consultant-manager.search-options'));
     }
 
 }

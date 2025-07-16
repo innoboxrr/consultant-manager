@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Innoboxrr\Traits\MetaOperations;
 use Innoboxrr\Traits\ModelAppendsTrait;
+use Innoboxrr\LaravelAudit\Support\Traits\Auditable;
 use Innoboxrr\ConsultantManager\Models\Traits\Relations\ConsultationSessionRelations;
 use Innoboxrr\ConsultantManager\Models\Traits\Storage\ConsultationSessionStorage;
 use Innoboxrr\ConsultantManager\Models\Traits\Assignments\ConsultationSessionAssignment;
@@ -20,6 +21,7 @@ class ConsultationSession extends Model
         SoftDeletes,
         MetaOperations,
         ModelAppendsTrait,
+        Auditable,
         ConsultationSessionRelations,
         ConsultationSessionStorage,
         ConsultationSessionAssignment,

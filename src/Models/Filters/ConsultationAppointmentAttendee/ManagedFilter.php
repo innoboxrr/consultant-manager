@@ -10,8 +10,10 @@ class ManagedFilter extends Managed
     public static function canView($query, $user, array $args = [])
     {   
 
-        // Añadir restricciones de visibilidad
-
+        if(method_exists($user, 'managedConsultationAppointmentAttendeeFilter')) {
+            $query = $user->managedConsultationAppointmentAttendeeFilter($query, $user, $args);
+        }
+        
         return $query;
 
     }

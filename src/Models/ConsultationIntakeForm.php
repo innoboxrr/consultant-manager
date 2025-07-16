@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Innoboxrr\Traits\MetaOperations;
 use Innoboxrr\Traits\ModelAppendsTrait;
+use Innoboxrr\LaravelAudit\Support\Traits\Auditable;
 use Innoboxrr\ConsultantManager\Models\Traits\Relations\ConsultationIntakeFormRelations;
 use Innoboxrr\ConsultantManager\Models\Traits\Storage\ConsultationIntakeFormStorage;
 use Innoboxrr\ConsultantManager\Models\Traits\Assignments\ConsultationIntakeFormAssignment;
@@ -20,6 +21,7 @@ class ConsultationIntakeForm extends Model
         SoftDeletes,
         MetaOperations,
         ModelAppendsTrait,
+        Auditable,
         ConsultationIntakeFormRelations,
         ConsultationIntakeFormStorage,
         ConsultationIntakeFormAssignment,

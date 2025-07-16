@@ -19,7 +19,7 @@ class ConsultationChatObserver
      */
     public function created(ConsultationChat $consultationChat): void
     {
-        // Remove if laravel-audit is used: $consultationChat->log('created');
+        $consultationChat->log('created');
     }
  
     /**
@@ -27,7 +27,7 @@ class ConsultationChatObserver
      */
     public function updated(ConsultationChat $consultationChat): void
     {
-        // Remove if laravel-audit is used: $consultationChat->log('updated');
+        $consultationChat->log('updated');
     }
  
     /**
@@ -35,7 +35,7 @@ class ConsultationChatObserver
      */
     public function deleted(ConsultationChat $consultationChat): void
     {
-        // Remove if laravel-audit is used: $consultationChat->log('deleted');
+        $consultationChat->log('deleted');
     }
  
     /**
@@ -43,7 +43,7 @@ class ConsultationChatObserver
      */
     public function restored(ConsultationChat $consultationChat): void
     {
-        // Remove if laravel-audit is used: $consultationChat->log('restored');
+        $consultationChat->log('restored');
     }
  
     /**
@@ -51,6 +51,6 @@ class ConsultationChatObserver
      */
     public function forceDeleted(ConsultationChat $consultationChat): void
     {
-        // Remove if laravel-audit is used: $consultationChat->log('forceDeleted');
+        $consultationChat->log('forceDeleted');
     }
 }

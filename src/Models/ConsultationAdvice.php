@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Innoboxrr\Traits\MetaOperations;
 use Innoboxrr\Traits\ModelAppendsTrait;
+use Innoboxrr\LaravelAudit\Support\Traits\Auditable;
 use Innoboxrr\ConsultantManager\Models\Traits\Relations\ConsultationAdviceRelations;
 use Innoboxrr\ConsultantManager\Models\Traits\Storage\ConsultationAdviceStorage;
 use Innoboxrr\ConsultantManager\Models\Traits\Assignments\ConsultationAdviceAssignment;
@@ -20,6 +21,7 @@ class ConsultationAdvice extends Model
         SoftDeletes,
         MetaOperations,
         ModelAppendsTrait,
+        Auditable,
         ConsultationAdviceRelations,
         ConsultationAdviceStorage,
         ConsultationAdviceAssignment,

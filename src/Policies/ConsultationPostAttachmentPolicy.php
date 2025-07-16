@@ -10,62 +10,68 @@ class ConsultationPostAttachmentPolicy
 {
     use HandlesAuthorization;
 
+    /**
+     * Permitir todo a admins, excepto habilidades explícitamente excluidas.
+     */
     public function before($user, $ability)
     {
+        $exceptAbilities = config('consultant-manager.permissions.consultationpostattachment-except-abilities', []);
 
-        $exceptAbilities = [];
-
-        if($user->isAdmin() && !in_array($ability, $exceptAbilities)){
-        
+        if (method_exists($user, 'isAdmin') && $user->isAdmin() && !in_array($ability, $exceptAbilities)) {
             return true;
-            
         }
+    }
 
+    /**
+     * Llamador central a métodos definidos en el usuario (usando traits).
+     */
+    protected function callUserMethod(User $user, string $method, ...$arguments): bool
+    {
+        return method_exists($user, $method) ? $user->{ $method }(...$arguments) : false;
     }
 
     public function index(User $user)
     {
-        return false;
+        return $this->callUserMethod($user, 'indexConsultationPostAttachment');
     }
 
     public function viewAny(User $user)
     {
-        return false;
+        return $this->callUserMethod($user, 'viewAnyConsultationPostAttachment');
     }
 
     public function view(User $user, ConsultationPostAttachment $consultationPostAttachment)
     {
-        return false;
+        return $this->callUserMethod($user, 'viewConsultationPostAttachment', $consultationPostAttachment);
     }
 
     public function create(User $user)
     {
-        return false;
+        return $this->callUserMethod($user, 'createConsultationPostAttachment');
     }
 
     public function update(User $user, ConsultationPostAttachment $consultationPostAttachment)
     {
-        return false;
+        return $this->callUserMethod($user, 'updateConsultationPostAttachment', $consultationPostAttachment);
     }
 
     public function delete(User $user, ConsultationPostAttachment $consultationPostAttachment)
     {
-        return false;
+        return $this->callUserMethod($user, 'deleteConsultationPostAttachment', $consultationPostAttachment);
     }
 
     public function restore(User $user, ConsultationPostAttachment $consultationPostAttachment)
     {
-        return false;
+        return $this->callUserMethod($user, 'restoreConsultationPostAttachment', $consultationPostAttachment);
     }
 
     public function forceDelete(User $user, ConsultationPostAttachment $consultationPostAttachment)
     {
-        return false;
+        return $this->callUserMethod($user, 'forceDeleteConsultationPostAttachment', $consultationPostAttachment);
     }
 
     public function export(User $user)
     {
-        return false;
+        return $this->callUserMethod($user, 'exportConsultationPostAttachment');
     }
-
 }

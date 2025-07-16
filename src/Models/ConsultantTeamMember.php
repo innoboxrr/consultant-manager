@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Innoboxrr\Traits\MetaOperations;
 use Innoboxrr\Traits\ModelAppendsTrait;
+use Innoboxrr\LaravelAudit\Support\Traits\Auditable;
 use Innoboxrr\ConsultantManager\Models\Traits\Relations\ConsultantTeamMemberRelations;
 use Innoboxrr\ConsultantManager\Models\Traits\Storage\ConsultantTeamMemberStorage;
 use Innoboxrr\ConsultantManager\Models\Traits\Assignments\ConsultantTeamMemberAssignment;
@@ -20,6 +21,7 @@ class ConsultantTeamMember extends Model
         SoftDeletes,
         MetaOperations,
         ModelAppendsTrait,
+        Auditable,
         ConsultantTeamMemberRelations,
         ConsultantTeamMemberStorage,
         ConsultantTeamMemberAssignment,

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Innoboxrr\Traits\MetaOperations;
 use Innoboxrr\Traits\ModelAppendsTrait;
+use Innoboxrr\LaravelAudit\Support\Traits\Auditable;
 use Innoboxrr\ConsultantManager\Models\Traits\Relations\ConsultationPostRelations;
 use Innoboxrr\ConsultantManager\Models\Traits\Storage\ConsultationPostStorage;
 use Innoboxrr\ConsultantManager\Models\Traits\Assignments\ConsultationPostAssignment;
@@ -20,6 +21,7 @@ class ConsultationPost extends Model
         SoftDeletes,
         MetaOperations,
         ModelAppendsTrait,
+        Auditable,
         ConsultationPostRelations,
         ConsultationPostStorage,
         ConsultationPostAssignment,

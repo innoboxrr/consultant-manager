@@ -15,12 +15,24 @@ return new class extends Migration
     {
         Schema::create('consultant_team_members', function (Blueprint $table) {
             $table->id();
-            $table->string('status');
-            $table->string('role');
+
+            $table->string('status')->default('invited'); // invited, active, suspended, etc.
+            $table->string('role');                       // admin, agent, assistant, etc.
+            $table->string('position_title')->nullable(); // opcional: Coordinador, Ejecutivo, etc.
+
+            $table->json('permissions')->nullable();      // permisos personalizados (opcional)
+            $table->text('notes')->nullable();            // notas internas u observaciones
+
+            $table->foreignId('invited_by')->nullable()->constrained('users')->nullOnDelete();
             $table->foreignId('consultant_id')->constrained()->onDelete('cascade');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
+
+            $table->timestamp('joined_at')->nullable();   // cuándo aceptó la invitación
+            $table->timestamp('removed_at')->nullable();  // cuándo fue removido (soft status)
+            $table->timestamp('last_active_at')->nullable(); // última interacción real
+
             $table->timestamps();
-            $table->softDeletes();
+            $table->softDeletes();                        // eliminaciones lógicas
         });
     }
 

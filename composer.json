@@ -32,5 +32,9 @@
         "psr-4": {
             "Innoboxrr\\ConsultantManager\\Tests\\": "tests/"
         }
+    },
+    "require": {
+        "innoboxrr/traits": "^1.6",
+        "innoboxrr/laravel-audit": "^1.2"
     }
 }

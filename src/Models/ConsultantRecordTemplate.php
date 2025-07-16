@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Innoboxrr\Traits\MetaOperations;
 use Innoboxrr\Traits\ModelAppendsTrait;
+use Innoboxrr\LaravelAudit\Support\Traits\Auditable;
 use Innoboxrr\ConsultantManager\Models\Traits\Relations\ConsultantRecordTemplateRelations;
 use Innoboxrr\ConsultantManager\Models\Traits\Storage\ConsultantRecordTemplateStorage;
 use Innoboxrr\ConsultantManager\Models\Traits\Assignments\ConsultantRecordTemplateAssignment;
@@ -20,6 +21,7 @@ class ConsultantRecordTemplate extends Model
         SoftDeletes,
         MetaOperations,
         ModelAppendsTrait,
+        Auditable,
         ConsultantRecordTemplateRelations,
         ConsultantRecordTemplateStorage,
         ConsultantRecordTemplateAssignment,

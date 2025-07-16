@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Innoboxrr\Traits\MetaOperations;
 use Innoboxrr\Traits\ModelAppendsTrait;
+use Innoboxrr\LaravelAudit\Support\Traits\Auditable;
 use Innoboxrr\ConsultantManager\Models\Traits\Relations\ConsultationServiceRelations;
 use Innoboxrr\ConsultantManager\Models\Traits\Storage\ConsultationServiceStorage;
 use Innoboxrr\ConsultantManager\Models\Traits\Assignments\ConsultationServiceAssignment;
@@ -20,6 +21,7 @@ class ConsultationService extends Model
         SoftDeletes,
         MetaOperations,
         ModelAppendsTrait,
+        Auditable,
         ConsultationServiceRelations,
         ConsultationServiceStorage,
         ConsultationServiceAssignment,
@@ -27,34 +29,31 @@ class ConsultationService extends Model
         ConsultationServiceMutators;
         
     protected $fillable = [
-        'title',
+        'name',
         'status',
         'type',
         'description',
         'payload',
-        'duration',
         'requires_approval',
         'consultant_id',
     ];
 
     protected $creatable = [
-        'title',
+        'name',
         'status',
         'type',
         'description',
         'payload',
-        'duration',
         'requires_approval',
         'consultant_id',
     ];
 
     protected $updatable = [
-        'title',
+        'name',
         'status',
         'type',
         'description',
         'payload',
-        'duration',
         'requires_approval',
     ];
 
@@ -70,12 +69,11 @@ class ConsultationService extends Model
 
     public static $export_cols = [
         'id',
-        'title',
+        'name',
         'status',
         'type',
         'description',
         'payload',
-        'duration',
         'requires_approval',
         'consultant_id',
         'created_at',
