@@ -15,7 +15,7 @@ export default {
         };
 
         // Función para cargar el idioma
-        const dealsLoadLocale = async (lang) => {
+        const consultantLoadLocale = async (lang) => {
             try {
                 const translationsStore = getTranslationsStore();
 
@@ -44,15 +44,15 @@ export default {
 
         // Registrar como propiedades globales
         app.config.globalProperties.__cm = translate;
-        app.config.globalProperties.$dealsLoadLocale = dealsLoadLocale;
+        app.config.globalProperties.$consultantLoadLocale = consultantLoadLocale;
 
         // Registrar como inyectables
         app.provide('__cm', translate);
-        app.provide('$dealsLoadLocale', dealsLoadLocale);
+        app.provide('$consultantLoadLocale', consultantLoadLocale);
 
         // Cargar el idioma por defecto si se proporciona
         if (options.defaultLang) {
-            dealsLoadLocale(options.defaultLang);
+            consultantLoadLocale(options.defaultLang);
         }
     },
 };
