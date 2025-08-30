@@ -23,6 +23,8 @@ return new class extends Migration
             $table->timestamps();
             $table->softDeletes();
         });
+
+        Schema::dropIfExists('consultation_intake_forms');
     }
 
     /**

@@ -17,7 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('owner_type'); // Consultant | Consultee
             $table->unsignedBigInteger('owner_id');
-            $table->foreignId('consultation_appointment_id')->constrained()->onDelete('cascade');
+            $table->foreignId('consultation_appointment_id')
+                ->constrained('consultation_appointments', 'id', 'fk_consultation_appointment')
+                ->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
 

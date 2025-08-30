@@ -17,7 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('key');
             $table->longText('value');
-            $table->foreignId('consultation_post_id')->constrained()->onDelete('cascade');
+            $table->foreignId('consultation_post_id')
+                ->constrained('consultation_posts', 'id', 'fk_consultation_post')
+                ->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
 

@@ -18,7 +18,10 @@ return new class extends Migration
             $table->string('subject')->nullable();
             $table->text('content')->nullable();
             $table->json('payload')->nullable();
-            $table->foreignId('parent_id')->nullable()->constrained('consultation_posts')->onDelete('set null');
+            $table->foreignId('parent_id')
+                ->nullable()
+                ->constrained('consultation_posts')
+                ->onDelete('set null');
             $table->string('owner_type'); // Consultant | Consultee
             $table->unsignedBigInteger('owner_id');
             $table->timestamps();

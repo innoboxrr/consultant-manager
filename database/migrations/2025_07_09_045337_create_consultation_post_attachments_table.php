@@ -16,7 +16,9 @@ return new class extends Migration
         Schema::create('consultation_post_attachments', function (Blueprint $table) {
             $table->id();
             $table->string('path');
-            $table->foreignId('consultation_post_id')->constrained()->onDelete('cascade');
+            $table->foreignId('consultation_post_id')
+                ->constrained()
+                ->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });
