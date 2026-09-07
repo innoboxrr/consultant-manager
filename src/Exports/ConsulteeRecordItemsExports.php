@@ -34,7 +34,9 @@ class ConsulteeRecordItemsExports implements FromView
     public function getQuery()
     {   
         $builder = new Builder();
-        return $builder->get(ConsulteeRecordItem::class, $this->data, config('consultant-manager.search-options'));
+        // lazy() en vez de get(): un export recorre la tabla entera y
+        // hidratar todas las filas a la vez es lo que revienta la memoria.
+        return $builder->lazy(ConsulteeRecordItem::class, $this->data);
     }
 
 }

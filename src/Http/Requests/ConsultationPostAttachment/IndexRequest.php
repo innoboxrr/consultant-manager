@@ -52,7 +52,7 @@ class IndexRequest extends FormRequest
 
         $builder = new Builder();
 
-        $query = $builder->get(ConsultationPostAttachment::class, $this->all(), config('consultant-manager.search-options'));
+        $query = $builder->get(ConsultationPostAttachment::class, $this->all());
 
         return ConsultationPostAttachmentResource::collection($query);
 

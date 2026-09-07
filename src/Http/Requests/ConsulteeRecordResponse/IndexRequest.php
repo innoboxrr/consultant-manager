@@ -52,7 +52,7 @@ class IndexRequest extends FormRequest
 
         $builder = new Builder();
 
-        $query = $builder->get(ConsulteeRecordResponse::class, $this->all(), config('consultant-manager.search-options'));
+        $query = $builder->get(ConsulteeRecordResponse::class, $this->all());
 
         return ConsulteeRecordResponseResource::collection($query);
 
