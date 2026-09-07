@@ -34,9 +34,7 @@ class ConsultationSessionsExports implements FromView
     public function getQuery()
     {   
         $builder = new Builder();
-        // lazy() en vez de get(): un export recorre la tabla entera y
-        // hidratar todas las filas a la vez es lo que revienta la memoria.
-        return $builder->lazy(ConsultationSession::class, $this->data);
+        return $builder->get(ConsultationSession::class, $this->data, config('consultant-manager.search-options'));
     }
 
 }
