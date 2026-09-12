@@ -16,8 +16,9 @@
         }
     ],
     "require-dev": {
-        "orchestra/testbench": "^9",
-        "innoboxrr/larapack-generator": "^5.0"
+        "orchestra/testbench": "^11.0",
+        "innoboxrr/larapack-generator": "^7.0",
+        "phpunit/phpunit": "^11.5 || ^12.0"
     },
     "extra": {
         "laravel": {
@@ -35,7 +36,13 @@
         }
     },
     "require": {
-        "innoboxrr/traits": "^1.6",
-        "innoboxrr/laravel-audit": "^1.2"
-    }
+        "innoboxrr/traits": "^2.0",
+        "innoboxrr/laravel-audit": "^2.0",
+        "php": "^8.3",
+        "illuminate/support": "^13.0"
+    },
+    "suggest": {
+        "maatwebsite/excel": "Necesario para las exportaciones del paquete (^3.1)."
+    },
+    "description": "Gestion de consultorias en Laravel: consultores y su disponibilidad, equipos, citas, asesorias, plantillas de expediente y chats de consulta."
 }
